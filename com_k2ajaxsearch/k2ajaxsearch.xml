@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.7.0" type="component" method="upgrade">
+	<name>K2 AJAX Search</name>
+	<author>Taleia Software</author>
+	<creationDate>2012-07-01</creationDate>
+	<copyright>Copyright (c) 2012 - 2015 Taleia Software</copyright>
+	<authorEmail>k2ajaxsearch@taleia.software</authorEmail>
+	<authorUrl>www.taleia.software</authorUrl>
+	<version>2.2</version>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>K2 AJAX Search Component</description>
+	<files folder="site">
+		<filename>controller.php</filename>
+		<filename>index.html</filename>
+		<filename>router.php</filename>
+		<filename>k2ajaxsearch.php</filename>
+		<folder>models</folder>
+		<folder>views</folder>
+		<folder>helpers</folder>
+	</files>
+	<languages folder="site">
+		<language tag="en-GB">language/en-GB.com_k2ajaxsearch.ini
+		</language>
+	</languages>
+	<administration>
+		<menu>K2AJAXSearch</menu>
+		<files folder="admin">
+			<filename>index.html</filename>
+			<filename>k2ajaxsearch.php</filename>
+		</files>
+	</administration>
+</extension>

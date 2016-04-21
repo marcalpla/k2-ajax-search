@@ -1,0 +1,1 @@
+var jq_k2as = jQuery.noConflict(true);

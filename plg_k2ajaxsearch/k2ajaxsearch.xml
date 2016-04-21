@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.7.0" type="plugin" group="k2ajaxsearch" method="upgrade">
+	<name>K2 AJAX Search</name>
+	<author>Taleia Software</author>
+	<creationDate>2012-07-01</creationDate>
+	<copyright>Copyright (C) 2012 - 2013 Taleia Software. All Rights Reserved.</copyright>
+	<authorEmail>k2ajaxsearch@taleia.software</authorEmail>
+	<authorUrl>www.taleia.software</authorUrl>
+	<version>2.0</version>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>K2 AJAX Search Plugin</description>
+	<files>
+		<filename plugin="k2ajaxsearch">k2ajaxsearch.php</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="search_limit" type="text" size="5" default="500" label="Search limit" description="Maximum number of items to return when performing a search"/>
+				<field name="search_tags" type="radio" default="0" label="Enable searching in tags" description="Select if you want to search items tags. Note that this can be very slow on large sites">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

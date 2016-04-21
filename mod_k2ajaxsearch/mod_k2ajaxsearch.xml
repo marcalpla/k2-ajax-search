@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.7.0" method="upgrade" client="site">
+  <name>K2 AJAX Search</name>
+  <author>Taleia Software based on the Universal AJAX Live Search module by Janos Biro</author>
+  <copyright>Copyright (C) 2012 - 2013 Taleia Software
+             Copyright (C) 2009 - 2012 Offlajn 
+             All rights reserved.
+  </copyright>
+  <authorEmail>k2ajaxsearch@taleia.software 
+               janos.biro@offlajn.com
+  </authorEmail>
+  <authorUrl>http://www.taleia.software 
+             http://www.offlajn.com
+  </authorUrl>
+  <version>2.1</version>
+  <description>K2 AJAX Search Module</description>
+  <files>
+    <filename>index.html</filename>
+    <filename>mod_k2ajaxsearch.xml</filename>
+    <folder>params</folder>
+    <folder>themes</folder>
+    <folder>helper</folder>
+    <folder>engine</folder>
+    <folder>classes</folder>
+    <filename module="mod_k2ajaxsearch">mod_k2ajaxsearch.php</filename>
+  </files>
+  <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+  <creationDate>2012-07-01</creationDate>
+  
+  <config>
+    <fields name="params" addfieldpath="/modules/mod_k2ajaxsearch/params">
+    <fieldset name="basic"> 
+       <field name="categories" type="categories" default="0" label="Categories" description="In which categories do you want to search. Press Ctrl key to select multiple options. Based on the amount of category choosers you will have to adapt the search area width."/>
+	   <field name="extrafields" type="extrafields" default="0" label="Show extra fields (Multi-select list type) choosers" description="Filters content by multi-select list type extra fields. Press Ctrl key to select multiple options. Based on the amount of extra fields selected you will have to adapt the search area width."/>
+       <field name="showfromdate" type="radio" default="0" label="Show from date chooser" description="Filters content by creation date">
+		 <option value="0">No</option>
+		 <option value="1">Yes</option>
+	   </field>        
+	   <field name="showtodate" type="radio" default="0" label="Show to date chooser" description="Filters content by creation date">
+		 <option value="0">No</option>
+		 <option value="1">Yes</option>
+	   </field>     
+	   <field name="showexactdate" type="radio" default="0" label="Show exact date chooser" description="Filters content by creation date">
+		 <option value="0">No</option>
+		 <option value="1">Yes</option>
+	   </field>    	 
+       <field name="includecatchildrenssearch" type="radio" default="1" label="Include category childrens on search" description="">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+       </field>	           
+       <field name="includecatchildrens" type="radio" default="1" label="Include category childrens on choosers" description="">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+       </field>
+       <field name="hidecatchooser" type="radio" default="0" label="Hide category choosers on front-end" description="">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+       </field>
+       <field name="allinonecatchooser" type="radio" default="0" label="All category choosers in a single one" description="">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+       </field>       
+       <field name="hidecatroot" type="radio" default="1" label="Hide category root on choosers" description="Category root always displayed if all category choosers in a single one selected">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+       </field>
+       <field name="catchooserfirst" type="radio" default="1" label="Show category choosers before extra fields choosers" description="">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+       </field>     
+        <field name="searchareawidth" type="text" default="250" label="Search area width (px)" description="The width of search area including choosers (default 250px)"/>
+        <field name="resultareawidth" type="text" default="250" label="Result list width (px)" description="The width of the result list (default 250px)"/>
+        <field name="filterbuttonwidth" type="text" default="120" label="Filter button width (px)" description="The width of the choosers buttons (default 120px)"/>
+        <field name="filterdatewidth" type="text" default="102" label="Filter date width (px)" description="The width of the filters by date (default 102px)"/>
+        <field name="catchoosercaption" type="text" default="" label="Caption of first category chooser" description="Custom caption of first category chooser. Empty for default caption or leaves a blank space if you don't want caption."/>
+        <field name="fromdatechoosercaption" type="text" default="From date..." label="From date chooser caption" description=""/>
+        <field name="todatechoosercaption" type="text" default="To date..." label="To date chooser caption" description=""/>
+        <field name="exactdatechoosercaption" type="text" default="Date..." label="Exact date chooser caption" description=""/>
+        <field name="searchbox" type="text" default="Search..." label="Searchbox caption" description=""/>
+      </fieldset>
+      <fieldset name="advanced"> 
+        <field name="resultsbycategory" type="radio" default="1" label="Display results list sorted by category blocks" description="Otherwise display results list in a single block">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </field> 
+        <field name="itemsperplugin" type="text" default="3" label="Number of results items per block" description="Number of displayed results items per block (default 3)"/>
+        <field name="logicvalextrafield" type="radio" default="1" label="Logical operation between the values of one extra field" description="">
+           <option value="0">And</option>
+           <option value="1">Or</option>
+        </field>
+        <field name="logicextrafields" type="radio" default="1" label="Logical operation between extra fields" description="">
+           <option value="0">And</option>
+           <option value="1">Or</option>
+        </field>
+        <field name="logiccatextrafields" type="radio" default="1" label="Logical operation between categories and extra fields" description="">
+           <option value="0">And</option>
+           <option value="1">Or</option>
+        </field>          
+        <field name="minchars" type="text" default="3" label="Minimum characters to search" description="Minimum characters to search (default 3)"/>
+        <field name="maxchars" type="text" default="50" label="Maximum characters to search" description="Maximum characters to search (default 50)"/>
+        <field name="stimeout" type="text" default="500" label="Search keypress timeout (ms)" description="The timeout after the AJAX search activates in miliseconds. If the value is too low, the server load could be too high. 500 is optimal."/>
+	<field name="resultstitle" type="text" default="Results" label="Results list title caption" description="If results by category disabled"/>
+        <field name="noresultstitle" type="text" default="Results (0)" label="No matches title caption in results list" description="What to write to the results list title, when no hit"/>
+        <field name="noresults" type="text" default="No results found for the keyword!" label="No matches caption in results list" description="What to write to the results list, when no hit"/>       
+        <field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description=""/>
+	    <field name="choosercontentcolor" type="color" default="#F9F9F9" size="7" label="Chooser background content color" description="" />
+	    <field name="chooserbuttoncolor" type="color" default="#F9F9F9" size="7" label="Chooser background button color" description="" />  
+	    <field name="arrowopenercolor" type="color" default="#727272" size="7" label="Chooser arrow opener color" description="" />
+	    <field name="closeimagecolor" type="color" default="#727272" size="7" label="Close image color" description="" />		
+	    <field name="borderboxcolor" type="color" default="#F9F9F9" size="7" label="The color of textbox border" description="" />
+	    <field name="highlightboxcolor" type="color" default="#F2F2F2" size="7" label="The color of textbox border when it is active" description="" />		
+	    <field name="plugintitlecolor" type="color" default="#F9F9F9" size="7" label="Results list title background color" description="" />
+	    <field name="resultcolor" type="color" default="#FFFFFF" size="7" label="Result-element background color" description="" />
+	    <field name="resultbordercolor" type="color" default="#CDCDCD" size="7" label="Result-element border color" description="" />
+	    <field name="activeresultcolor" type="color" default="#F9F9F9" size="7" label="Hover, Active result-element background gradient color" description="" />
+	    <field name="searchformfontcolor" type="color" default="#727272" size="7" label="Search form font color" description="" />	
+	    <field name="resultsfontcolor" type="color" default="#727272" size="7" label="Results list and content choosers font color" description="" />        
+      </fieldset>
+    </fields>
+  </config>
+</extension>
