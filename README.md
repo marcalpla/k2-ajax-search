@@ -20,10 +20,6 @@ When typing, the extension uses AJAX and shows a list of previous results sorted
 #### Highly customizable
 You can easily customize many features of the appearance, filtering, the search engine, and more.
 
-## Demo
-
-[Try a demo with a catalog of movies] (http://k2ajaxsearch.taleia.software/demo).
-
 ## Installation
 
 [Download the ZIP] (https://github.com/marcalpla/k2-ajax-search/archive/master.zip) of this repository and install it with the Joomla extensions installer. Remember to enable the extension plugin.
